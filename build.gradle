@@ -20,8 +20,8 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 
 
 version = '0.0.1-1.18.2'
-group = 'net.bcnlione.tutorialmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'tutorialmod'
+group = 'net.tb.customblocksmod' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'customblocksmod'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -43,7 +43,7 @@ minecraft {
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'parchment', version: '2022.11.06-1.18.2'
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -64,10 +64,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'tutorialmod'
+            property 'forge.enabledGameTestNamespaces', 'customblocksmod'
 
             mods {
-                tutorialmod {
+                customblocksmod {
                     source sourceSets.main
                 }
             }
@@ -81,10 +81,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'tutorialmod'
+            property 'forge.enabledGameTestNamespaces', 'customblocksmod'
 
             mods {
-                tutorialmod {
+                customblocksmod {
                     source sourceSets.main
                 }
             }
@@ -109,10 +109,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'tutorialmod'
+            property 'forge.enabledGameTestNamespaces', 'customblocksmod'
 
             mods {
-                tutorialmod {
+                customblocksmod {
                     source sourceSets.main
                 }
             }
@@ -126,10 +126,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'tutorialmod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'customblocksmod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                tutorialmod {
+                customblocksmod {
                     source sourceSets.main
                 }
             }
@@ -173,12 +173,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "tutorialmod",
-                "Specification-Vendor"    : "tutorialmodsareus",
+                "Specification-Title"     : "customblocksmod",
+                "Specification-Vendor"    : "customblocksmodsareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "tutorialmodsareus",
+                "Implementation-Vendor"   : "customblocksmodsareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }

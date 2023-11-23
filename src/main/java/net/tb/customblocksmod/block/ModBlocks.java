@@ -1,9 +1,9 @@
-package net.bcnlione.tutorialmod.block;
+package net.tb.customblocksmod.block;
 
-import net.bcnlione.tutorialmod.TutorialMod;
-import net.bcnlione.tutorialmod.block.custom.DirtBlock;
-import net.bcnlione.tutorialmod.item.ModCreativeModeTab;
-import net.bcnlione.tutorialmod.item.ModItems;
+import net.tb.customblocksmod.CustomBlocksMod;
+import net.tb.customblocksmod.block.custom.DirtBlock;
+import net.tb.customblocksmod.item.ModCreativeModeTab;
+import net.tb.customblocksmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -19,15 +19,15 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
-            DeferredRegister.create(ForgeRegistries.BLOCKS, TutorialMod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.BLOCKS, CustomBlocksMod.MOD_ID);
 
     public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),
-            ModCreativeModeTab.TUTORIAL_TAB);
+            ModCreativeModeTab.CUSTOMBLOCKS_TAB);
 
     public static final RegistryObject<Block> DIRT_BLOCK = registerBlock("dirt_block",
             () -> new DirtBlock(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),
-            ModCreativeModeTab.TUTORIAL_TAB);
+            ModCreativeModeTab.CUSTOMBLOCKS_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
