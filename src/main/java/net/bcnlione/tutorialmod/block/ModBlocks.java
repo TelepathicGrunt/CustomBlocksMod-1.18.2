@@ -1,6 +1,7 @@
 package net.bcnlione.tutorialmod.block;
 
 import net.bcnlione.tutorialmod.TutorialMod;
+import net.bcnlione.tutorialmod.block.custom.DirtBlock;
 import net.bcnlione.tutorialmod.item.ModCreativeModeTab;
 import net.bcnlione.tutorialmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -22,6 +23,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),
+            ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> DIRT_BLOCK = registerBlock("dirt_block",
+            () -> new DirtBlock(BlockBehaviour.Properties.of(Material.METAL).strength(9f).requiresCorrectToolForDrops()),
             ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
