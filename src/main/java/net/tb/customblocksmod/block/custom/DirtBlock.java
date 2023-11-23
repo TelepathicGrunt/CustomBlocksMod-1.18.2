@@ -25,9 +25,10 @@ public class DirtBlock extends Block {
 
             ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
             ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "woodentree");
+            BlockPos offsetPos = new BlockPos(pPos.getX() + 2, pPos.getY() + 1, pPos.getZ() + 2);
 
-            StructureMethods.generateStructure(pPos, serverLevel, resourceLocation, 10, false, false, true,
-                    false, null);
+            StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, false, false, true,
+                    false, 123L);
         }
     }
 }
