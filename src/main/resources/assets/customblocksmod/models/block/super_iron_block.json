@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "customblocksmod:block/dirt_block"
+    "all": "customblocksmod:block/super_iron_block"
   }
 }

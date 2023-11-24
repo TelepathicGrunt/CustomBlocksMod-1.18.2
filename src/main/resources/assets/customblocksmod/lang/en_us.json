@@ -1,8 +1,18 @@
 {
   "item.customblocksmod.citrine": "Citrine",
 
-  "block.customblocksmod.citrine_block": "Citrine Block",
-  "block.customblocksmod.dirt_block": "Dirt Block",
+  "block.customblocksmod.super_dirt_block": "Super Dirt Block",
+  "block.customblocksmod.bread_block": "Bread Block",
+  "block.customblocksmod.super_sand_block": "Super Sand Block",
+  "block.customblocksmod.stick_block": "Stick Block",
+  "block.customblocksmod.super_cobblestone_block": "Super Cobblestone Block",
+  "block.customblocksmod.super_stone_block": "Super Stone Block",
+  "block.customblocksmod.water_bucket_block": "Water Bucket Block",
+  "block.customblocksmod.lava_bucket_block": "Lava Bucket Block",
+  "block.customblocksmod.super_iron_block": "Super Iron Block",
+  "block.customblocksmod.bow_block": "Bow Block",
+  "block.customblocksmod.super_diamond_block": "Super Diamond Block",
+
 
   "item.customblocksmod.poop_helmet": "§4§lPoop Helmet",
   "item.customblocksmod.poop_chestplate": "§4§lPoop Chestplate",

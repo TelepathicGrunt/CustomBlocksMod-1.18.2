@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "customblocksmod:block/lava_bucket_block" }
+  }
+}

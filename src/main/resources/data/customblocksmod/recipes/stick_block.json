@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:dirt"
+      "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "customblocksmod:dirt_block"
+    "item": "customblocksmod:stick_block"
   }
 }

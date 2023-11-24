@@ -21,8 +21,8 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class DirtBlock extends Block {
-    public DirtBlock(Properties pProperties) {
+public class SuperDirtBlock extends Block {
+    public SuperDirtBlock(Properties pProperties) {
         super(pProperties);
     }
 
