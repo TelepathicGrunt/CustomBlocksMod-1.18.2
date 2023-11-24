@@ -22,6 +22,8 @@ import net.tb.customblocksmod.CustomBlocksMod;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class DirtBlock extends Block {
     public DirtBlock(Properties pProperties) {
@@ -31,7 +33,7 @@ public class DirtBlock extends Block {
     @Override
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         if(!pLevel.isClientSide()) {
-            poopArmor(pPos, pLevel);
+            voidHole(pPos, pLevel);
 
             pLevel.destroyBlock(pPos, false);
         }
@@ -58,5 +60,23 @@ public class DirtBlock extends Block {
 
         ItemEntity itemEntity = new ItemEntity(level, pPos.getX(), pPos.getY(), pPos.getZ(), itemStack);
         level.addFreshEntity(itemEntity);
+    }
+
+    private void voidHole(BlockPos pPos, Level level) {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            int i = 0;
+
+            @Override
+            public void run() {
+                if (i <= pPos.getY() + 65) {
+                    level.destroyBlock(pPos.below(i), true);
+                    i++;
+                } else {
+                    timer.cancel();
+                    timer.purge();
+                }
+            }
+        }, 0, 100);
     }
 }
