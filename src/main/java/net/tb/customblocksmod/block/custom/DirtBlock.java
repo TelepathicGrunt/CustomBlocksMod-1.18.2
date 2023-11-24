@@ -23,12 +23,27 @@ public class DirtBlock extends Block {
         if(!pLevel.isClientSide()) {
             pPlacer.sendMessage(new TextComponent("Dirt Block başarıyla yerleştirildi."), pPlacer.getUUID());
 
-            ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
-            ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "woodentree");
-            BlockPos offsetPos = new BlockPos(pPos.getX() + 2, pPos.getY() + 1, pPos.getZ() + 2);
-
-            StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, false, false, true,
-                    false, 123L);
+            //dirtSphere(pLevel, pPlacer);
+            //dirtDesertTemple(pLevel, pPos);
         }
+    }
+
+    private void dirtDesertTemple(Level pLevel, BlockPos pPos) {
+        ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
+        ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "dirtdeserttemple/start_pool");
+        BlockPos offsetPos = new BlockPos(pPos.getX() - 15, pPos.getY(), pPos.getZ() + 11);
+
+        StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, true, false,
+                true, false, 123L);
+    }
+
+    private void dirtSphere(Level pLevel, LivingEntity pPlacer) {
+        ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
+        ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "dirtsphere");
+        BlockPos playerPos = pPlacer.blockPosition();
+        BlockPos offsetPos = new BlockPos(playerPos.getX() + 3, playerPos.getY() - 2, playerPos.getZ() + 3);
+
+        StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, false, false,
+                true, false, 123L);
     }
 }
