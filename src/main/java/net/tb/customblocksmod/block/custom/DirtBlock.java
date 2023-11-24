@@ -27,12 +27,37 @@ public class DirtBlock extends Block {
     @Override
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
         if(!pLevel.isClientSide()) {
-            pPlacer.sendMessage(new TextComponent("Dirt Block başarıyla yerleştirildi."), pPlacer.getUUID());
+            Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    pLevel.destroyBlock(pPos, false);
+                    randomRun(pLevel, pPos, pPlacer);
+                }
+            }, 1000);
+        }
+    }
 
-            //dirtSphere(pLevel, pPlacer);
-            //dirtDesertTemple(pLevel, pPos);
-            //poopArmor(pLevel, pPos);
-            //voidHole(pLevel, pPos);
+    private void randomRun(Level pLevel, BlockPos pPos, LivingEntity pPlacer) {
+        int randomNum = (int) (Math.random() * 4);
+
+        switch (randomNum) {
+            case 0:
+                pPlacer.sendMessage(new TextComponent("Dirt Sphere"), pPlacer.getUUID());
+                dirtSphere(pLevel, pPlacer);
+                break;
+            case 1:
+                pPlacer.sendMessage(new TextComponent("Dirt Desert Temple"), pPlacer.getUUID());
+                dirtDesertTemple(pLevel, pPos);
+                break;
+            case 2:
+                pPlacer.sendMessage(new TextComponent("Poop Armor"), pPlacer.getUUID());
+                poopArmor(pLevel, pPos);
+                break;
+            case 3:
+                pPlacer.sendMessage(new TextComponent("Void Hole"), pPlacer.getUUID());
+                voidHole(pLevel, pPos);
+                break;
         }
     }
 
