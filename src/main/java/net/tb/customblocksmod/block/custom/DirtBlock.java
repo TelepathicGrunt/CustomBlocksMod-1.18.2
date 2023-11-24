@@ -37,7 +37,7 @@ public class DirtBlock extends Block {
         }
     }
 
-    public void poopArmor(BlockPos pPos, Level level){
+    private void poopArmor(BlockPos pPos, Level level){
 
         ItemStack[] itemStacks = {
                 new ItemStack(ModItems.POOP_HELMET.get()),
