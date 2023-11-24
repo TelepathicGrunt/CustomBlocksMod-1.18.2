@@ -4,5 +4,10 @@
   "block.customblocksmod.citrine_block": "Citrine Block",
   "block.customblocksmod.dirt_block": "Dirt Block",
 
+  "item.customblocksmod.poop_helmet": "§4§lPoop Helmet",
+  "item.customblocksmod.poop_chestplate": "§4§lPoop Chestplate",
+  "item.customblocksmod.poop_leggings": "§4§lPoop Leggings",
+  "item.customblocksmod.poop_boots": "§4§lPoop Boots",
+
   "itemGroup.customblockstab": "Custom Blocks Mod"
 }
