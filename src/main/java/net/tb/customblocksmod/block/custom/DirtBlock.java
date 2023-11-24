@@ -1,13 +1,6 @@
 package net.tb.customblocksmod.block.custom;
 
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraftforge.fml.common.Mod;
-import net.tb.customblocksmod.item.ModItems;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.tb.customblocksmod.item.ModItems;
 import net.tb.customblocksmod.util.StructureMethods;
@@ -23,7 +16,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.tb.customblocksmod.CustomBlocksMod;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -39,16 +31,9 @@ public class DirtBlock extends Block {
 
             //dirtSphere(pLevel, pPlacer);
             //dirtDesertTemple(pLevel, pPos);
+            //poopArmor(pLevel, pPos);
+            //voidHole(pLevel, pPos);
         }
-    }
-
-    private void dirtDesertTemple(Level pLevel, BlockPos pPos) {
-        ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
-        ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "dirtdeserttemple/start_pool");
-        BlockPos offsetPos = new BlockPos(pPos.getX() - 15, pPos.getY(), pPos.getZ() + 11);
-
-        StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, true, false,
-                true, false, 123L);
     }
 
     private void dirtSphere(Level pLevel, LivingEntity pPlacer) {
@@ -61,7 +46,16 @@ public class DirtBlock extends Block {
                 true, false, 123L);
     }
 
-    private void poopArmor(BlockPos pPos, Level level) {
+    private void dirtDesertTemple(Level pLevel, BlockPos pPos) {
+        ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
+        ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "dirtdeserttemple/start_pool");
+        BlockPos offsetPos = new BlockPos(pPos.getX() - 15, pPos.getY(), pPos.getZ() + 11);
+
+        StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, true, false,
+                true, false, 123L);
+    }
+
+    private void poopArmor(Level level, BlockPos pPos) {
         ItemStack[] itemStacks = {
                 new ItemStack(ModItems.POOP_HELMET.get()),
                 new ItemStack(ModItems.POOP_CHESTPLATE.get()),
@@ -83,7 +77,7 @@ public class DirtBlock extends Block {
         level.addFreshEntity(itemEntity);
     }
 
-    private void voidHole(BlockPos pPos, Level level) {
+    private void voidHole(Level level, BlockPos pPos) {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             int i = 0;
