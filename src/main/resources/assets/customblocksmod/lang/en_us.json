@@ -1,5 +1,8 @@
 {
-  "item.customblocksmod.citrine": "Citrine",
+  "item.customblocksmod.poop_helmet": "§4§lPoop Helmet",
+  "item.customblocksmod.poop_chestplate": "§4§lPoop Chestplate",
+  "item.customblocksmod.poop_leggings": "§4§lPoop Leggings",
+  "item.customblocksmod.poop_boots": "§4§lPoop Boots",
 
   "block.customblocksmod.super_dirt_block": "Super Dirt Block",
   "block.customblocksmod.bread_block": "Bread Block",
@@ -12,12 +15,6 @@
   "block.customblocksmod.super_iron_block": "Super Iron Block",
   "block.customblocksmod.bow_block": "Bow Block",
   "block.customblocksmod.super_diamond_block": "Super Diamond Block",
-
-
-  "item.customblocksmod.poop_helmet": "§4§lPoop Helmet",
-  "item.customblocksmod.poop_chestplate": "§4§lPoop Chestplate",
-  "item.customblocksmod.poop_leggings": "§4§lPoop Leggings",
-  "item.customblocksmod.poop_boots": "§4§lPoop Boots",
 
   "itemGroup.customblockstab": "Custom Blocks Mod"
 }

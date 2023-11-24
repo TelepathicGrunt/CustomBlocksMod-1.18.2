@@ -86,7 +86,7 @@ public class SuperDirtBlock extends Block {
         ItemStack[] itemStacks = {
                 new ItemStack(ModItems.POOP_HELMET.get()),
                 new ItemStack(ModItems.POOP_CHESTPLATE.get()),
-                new ItemStack(ModItems.POOP_LEGGING.get()),
+                new ItemStack(ModItems.POOP_LEGGINGS.get()),
                 new ItemStack(ModItems.POOP_BOOTS.get())
         };
 
