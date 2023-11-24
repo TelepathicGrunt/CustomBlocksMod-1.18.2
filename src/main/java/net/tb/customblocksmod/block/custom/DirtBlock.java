@@ -1,5 +1,6 @@
 package net.tb.customblocksmod.block.custom;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.tb.customblocksmod.item.ModItems;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.tb.customblocksmod.CustomBlocksMod;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -26,7 +28,7 @@ public class DirtBlock extends Block {
 
     @Override
     public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
-        if(!pLevel.isClientSide()) {
+        if (!pLevel.isClientSide()) {
             pPlacer.sendMessage(new TextComponent("Dirt Block başarıyla yerleştirildi."), pPlacer.getUUID());
 
             //dirtSphere(pLevel, pPlacer);
@@ -63,7 +65,7 @@ public class DirtBlock extends Block {
                 new ItemStack(ModItems.POOP_BOOTS.get())
         };
 
-        for(ItemStack itemStack : itemStacks) {
+        for (ItemStack itemStack : itemStacks) {
             itemStack.enchant(Enchantments.UNBREAKING, 3);
             itemStack.enchant(Enchantments.BINDING_CURSE, 1);
             spawnItemAtLocation(level, pPos, itemStack);
@@ -94,4 +96,25 @@ public class DirtBlock extends Block {
             }
         }, 0, 100);
     }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, Random pRandom) {
+        float chance = 0.35f;
+
+        if (chance < pRandom.nextFloat()) {
+            double offsetX = (pRandom.nextDouble() - 0.5) * 0.6;
+            double offsetY = pRandom.nextDouble() * 0.6 - 0.3;
+            double offsetZ = (pRandom.nextDouble() - 0.5) * 0.6;
+
+            pLevel.addParticle(ParticleTypes.DRAGON_BREATH,
+                    pPos.getX() + 0.5 + offsetX,
+                    pPos.getY() + 0.5 + offsetY,
+                    pPos.getZ() + 0.5 + offsetZ,
+                    (pRandom.nextDouble() - 0.5) * 0.05, // X hızı
+                    (pRandom.nextDouble() - 0.5) * 0.05, // Y hızı
+                    (pRandom.nextDouble() - 0.5) * 0.05  // Z hızı
+                );
+        }
+    }
 }
+
