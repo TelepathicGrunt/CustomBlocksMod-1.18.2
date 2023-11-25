@@ -72,7 +72,7 @@ public class StickBlock extends Block {
 
     //bloğu koyduğumuz yerde ağaç spawnlar
     private void woodentreespawn(Level pLevel, LivingEntity pPlacer, BlockPos pPos) {
-        pLevel.destroyBlock(pPos, true);
+        pLevel.destroyBlock(pPos, false);
         ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
         ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "woodentree");
         BlockPos offsetPos = new BlockPos(pPos.getX() + 2, pPos.getY() + 1, pPos.getZ() + 2);
