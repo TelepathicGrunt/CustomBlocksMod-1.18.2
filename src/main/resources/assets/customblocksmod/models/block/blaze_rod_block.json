@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "customblocksmod:block/blaze_rod_block"
+  }
+}

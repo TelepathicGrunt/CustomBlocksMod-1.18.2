@@ -15,6 +15,17 @@
   "block.customblocksmod.super_iron_block": "Super Iron Block",
   "block.customblocksmod.bow_block": "Bow Block",
   "block.customblocksmod.super_diamond_block": "Super Diamond Block",
+  "block.customblocksmod.sword_block": "Sword Block",
+  "block.customblocksmod.pickaxe_block": "Pickaxe Block",
+  "block.customblocksmod.sapling_block": "Sapling Block",
+  "block.customblocksmod.apple_block": "Apple Block",
+  "block.customblocksmod.totem_block": "Totem Block",
+  "block.customblocksmod.super_netherite_block": "Super Netherite Block",
+  "block.customblocksmod.golden_apple_block": "Golden Apple Block",
+  "block.customblocksmod.super_obsidian_block": "Super Obsidian Block",
+  "block.customblocksmod.blaze_rod_block": "Blaze Rod Block",
+  "block.customblocksmod.ender_pearl_block": "Ender Pearl Block",
+  "block.customblocksmod.notch_apple_block": "Notch Apple Block",
 
   "itemGroup.customblockstab": "Custom Blocks Mod"
 }
