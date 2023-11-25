@@ -4,6 +4,11 @@
   "item.customblocksmod.poop_leggings": "§4§lPoop Leggings",
   "item.customblocksmod.poop_boots": "§4§lPoop Boots",
 
+  "item.customblocksmod.gold_sword_block_sword": "§6§lSword Block Sword",
+  "item.customblocksmod.iron_sword_block_sword": "§6§lSword Block Sword",
+  "item.customblocksmod.diamond_sword_block_sword": "§6§lSword Block Sword",
+  "item.customblocksmod.netherite_sword_block_sword": "§6§lSword Block Sword",
+
   "block.customblocksmod.super_dirt_block": "Super Dirt Block",
   "block.customblocksmod.bread_block": "Bread Block",
   "block.customblocksmod.super_sand_block": "Super Sand Block",
