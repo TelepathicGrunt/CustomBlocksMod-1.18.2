@@ -52,7 +52,7 @@ public class SuperSandBlock extends Block {
 
     private void desertWell(Level pLevel, BlockPos pPos) {
         ServerLevel serverLevel = pLevel.getServer().getLevel(pLevel.dimension());
-        ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "desertwell");
+        ResourceLocation resourceLocation = new ResourceLocation(CustomBlocksMod.MOD_ID, "run_down_house/start_pool");
         BlockPos offsetPos = new BlockPos(pPos.getX() + 2, pPos.getY(), pPos.getZ() + 2);
 
         StructureMethods.generateStructure(offsetPos, serverLevel, resourceLocation, 10, false, false,
